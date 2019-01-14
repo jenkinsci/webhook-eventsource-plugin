@@ -41,9 +41,11 @@ public class EventHandlerImpl implements EventHandler {
         builder.url(webhook);
         builder.post(RequestBody.create(MediaType.parse(json.getString("content-type")),
                 json.getJSONObject("body").toString().getBytes()));
-        builder.addHeader("x-github-event", json.getString("x-github-event"));
-        builder.addHeader("x-github-delivery", json.getString("x-github-delivery"));
-        builder.addHeader("user-agent", json.getString("user-agent"));
+        json.forEach((key, value) -> {
+            if(value instanceof String) {
+                builder.addHeader(key, value.toString());
+            }
+        });
         Request request = builder.build();
 
         Call call = new OkHttpClient().newCall(request);
