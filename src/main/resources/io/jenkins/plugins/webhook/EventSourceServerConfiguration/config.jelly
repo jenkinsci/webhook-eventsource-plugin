@@ -5,7 +5,7 @@
         <f:entry field="server" title="${%Server}">
             <f:textbox/>
         </f:entry>
-        <f:entry field="webhook" title="${%webhook}">
+        <f:entry field="webhook" title="${%WebHook}">
             <f:textbox/>
         </f:entry>
     </f:section>

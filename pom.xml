@@ -7,17 +7,20 @@
         <version>3.4</version>
         <relativePath />
     </parent>
+
     <groupId>io.jenkins.plugins</groupId>
     <artifactId>webhook-eventsource</artifactId>
-    <version>1.0-SNAPSHOT</version>
+    <version>0.0.1-SNAPSHOT</version>
     <packaging>hpi</packaging>
+
     <properties>
         <jenkins.version>2.60.3</jenkins.version>
         <java.level>8</java.level>
     </properties>
-    <name>Webhook Eventsource Plugin</name>
-    <description>Webhook Eventsource Plugin</description>
-    <!-- The default licence for Jenkins OSS Plugins is MIT. Substitute for the applicable one if needed. -->
+
+    <name>WebHook EventSource Plugin</name>
+    <description>WebHook EventSource Plugin</description>
+
     <licenses>
         <license>
             <name>MIT License</name>
@@ -33,7 +36,7 @@
       </developer>
     </developers>
 
-    <url>https://wiki.jenkins.io/display/JENKINS/TODO+Plugin</url>
+    <url>https://wiki.jenkins.io/display/JENKINS/Webhook+Eventsource+Plugin</url>
     <scm>
         <connection>scm:git:git://github.com/jenkinsci/${project.artifactId}-plugin.git</connection>
         <developerConnection>scm:git:git@github.com:jenkinsci/${project.artifactId}-plugin.git</developerConnection>

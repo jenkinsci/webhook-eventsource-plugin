@@ -1,4 +1,4 @@
 <?jelly escape-by-default='true'?>
 <div>
-    TODO
+    EventSource proxy plugin, allow you using WebHook in a local environment.
 </div>

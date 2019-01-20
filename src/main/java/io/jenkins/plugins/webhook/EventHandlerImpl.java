@@ -22,12 +22,12 @@ public class EventHandlerImpl implements EventHandler {
     }
 
     public void onOpen() throws Exception {
-        logger.info("open");
+        logger.info("event source connection opened");
     }
 
     @Override
     public void onClosed() throws Exception {
-
+        logger.info("event source connection closed");
     }
 
     public void onMessage(String event, MessageEvent messageEvent) throws Exception {

@@ -1,13 +1,11 @@
 package io.jenkins.plugins.webhook;
 
 import hudson.Extension;
-import hudson.util.FormValidation;
 import jenkins.model.GlobalConfiguration;
 import net.sf.json.JSONObject;
 import org.apache.commons.lang.StringUtils;
 import org.jenkinsci.Symbol;
 import org.kohsuke.stapler.DataBoundSetter;
-import org.kohsuke.stapler.QueryParameter;
 import org.kohsuke.stapler.StaplerRequest;
 
 /**
@@ -54,23 +52,7 @@ public class EventSourceServerConfiguration extends GlobalConfiguration {
         this.webhook = webhook;
     }
 
-    public FormValidation doCheckLabel(@QueryParameter String value) {
-        if (StringUtils.isEmpty(value)) {
-            return FormValidation.warning("Please specify a label.");
-        }
-        return FormValidation.ok();
-    }
-
     public boolean isValid() {
         return StringUtils.isNotBlank(server) && StringUtils.isNotBlank(webhook);
-    }
-
-    public boolean hasChanged(EventSourceServerConfiguration config) {
-        if(config == null) {
-            return false;
-        }
-
-        return !config.getServer().equals(this.getServer()) ||
-                !config.getWebhook().equalsIgnoreCase(this.getWebhook());
     }
 }
